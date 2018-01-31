@@ -4,7 +4,7 @@
     <input type="text" placeholder="search" ng-model="searchMush">Search For Mushrooms
     <input type="radio" name="edible" ng-click="poison = true" ng-model="mushroom.edible">Poisonous Mushrooms
     <input type="radio" name="edible" ng-click="poison = false" ng-model="mushroom.edible">Non-poisonous Mushrooms
-    <ul ng-if='poison !== mushroom.edible' ng-repeat="mushroom in mushArry">
+    <ul ng-if='poison !== mushroom.edible' ng-repeat="mushroom in mushArry| filter: {name: searchMush}">
         <li>
             <h4>{{mushroom.name}}</h4>
             <h6>{{mushroom.description}}</h6>
